@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Code Editor</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #1e1e1e;
+        color: white;
+        height: 100vh;
+        display: flex;
+      }
+
+      .container {
+        display: flex;
+        width: 100%;
+      }
+
+      .icon {
+        font-size: 25px;
+        color: white;
+        margin-bottom: 20px;
+        cursor: pointer;
+      }
+
+      .content {
+        flex-grow: 1;
+        background-color: #121212;
+        padding: 20px;
+      }
+
+      .code-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #ffffff;
+        border: 2px solid grey;
+        padding: 10px 20px;
+        max-width: 600px; 
+        margin: 0 auto; 
+        border-radius: 30px;
+      }
+
+      .btn {
+        background-color: transparent;
+        border: 2px solid transparent;
+        color: rgb(0, 0, 0);
+        padding: 12px 20px;
+        margin: 0 10px;
+        border-radius: 30px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+      .btn:hover {
+        color: black;
+        border: 2px solid #007bff;
+        background-color: rgba(0, 123, 255, 0.1);
+      }
+
+      .btn.active {
+        background-color: #007bff;
+        color: white;
+        border: 2px solid #007bff;
+      }
+      
+      .code-body,
+      .plan-section,
+      .collaborate-section,
+      .automate-section,
+      .secure-section {
+        display: none; 
+        background-color: #121212;
+        padding: 20px;
+        border-radius: 8px;
+        font-family: "Courier New", Courier, monospace;
+        font-size: 14px;
+        color: #dcdcdc;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+      }
+            table {
+        width: 100%;
+        border-collapse: collapse;
+        font-family: Arial, sans-serif;
+        margin: 20px 0;
+      }
+
+      th, td {
+        border: 1px solid #ddd;
+        padding: 8px 12px;
+        text-align: center;
+      }
+
+      th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+      }
+
+      tr:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+
+      .highlight {
+        font-weight: bold;
+        color: black;
+        background-color: #f9f9f9;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="content">
+ 
+
+          <!-- Code Section -->
+          <div id="code" class="code-body">
+                        <h3>Plan Section</h3>
+  <table>
+      <thead>
+        <tr>
+          <th>Label</th>
+          <th>Precision</th>
+          <th>Recall</th>
+          <th>F1-score</th>
+          <th>Akurasi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>B – ECONOMIC</td>
+          <td>0,80</td>
+          <td>0,94</td>
+          <td>0,86</td>
+          <td rowspan="7" class="highlight">0,86</td>
+        </tr>
+        <tr>
+          <td>I – ECONOMIC</td>
+          <td>0,73</td>
+          <td>0,79</td>
+          <td>0,76</td>
+        </tr>
+        <tr>
+          <td>B – SOCIAL</td>
+          <td>0,71</td>
+          <td>0,80</td>
+          <td>0,75</td>
+        </tr>
+        <tr>
+          <td>I – SOCIAL</td>
+          <td>0,89</td>
+          <td>0,94</td>
+          <td>0,91</td>
+        </tr>
+        <tr>
+          <td>B – ENVIRONMENT</td>
+          <td>0,60</td>
+          <td>0,73</td>
+          <td>0,66</td>
+        </tr>
+        <tr>
+          <td>I – ENVIRONMENT</td>
+          <td>0,88</td>
+          <td>0,91</td>
+          <td>0,89</td>
+        </tr>
+        <tr>
+          <td>O</td>
+          <td>0,95</td>
+          <td>0,95</td>
+          <td>0,95</td>
+        </tr>
+        <tr>
+          <td>macro avg</td>
+          <td>0,79</td>
+          <td>0,87</td>
+          <td>0,83</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+          </div>
+
+          <!-- Plan Section -->
+          <div id="plan" class="plan-section">
+            <h3>Plan Section</h3>
+  <table>
+      <thead>
+        <tr>
+          <th>Label</th>
+          <th>Precision</th>
+          <th>Recall</th>
+          <th>F1-score</th>
+          <th>Akurasi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>B – ECONOMIC</td>
+          <td>0,80</td>
+          <td>0,94</td>
+          <td>0,86</td>
+          <td rowspan="7" class="highlight">0,86</td>
+        </tr>
+        <tr>
+          <td>I – ECONOMIC</td>
+          <td>0,73</td>
+          <td>0,79</td>
+          <td>0,76</td>
+        </tr>
+        <tr>
+          <td>B – SOCIAL</td>
+          <td>0,71</td>
+          <td>0,80</td>
+          <td>0,75</td>
+        </tr>
+        <tr>
+          <td>I – SOCIAL</td>
+          <td>0,89</td>
+          <td>0,94</td>
+          <td>0,91</td>
+        </tr>
+        <tr>
+          <td>B – ENVIRONMENT</td>
+          <td>0,60</td>
+          <td>0,73</td>
+          <td>0,66</td>
+        </tr>
+        <tr>
+          <td>I – ENVIRONMENT</td>
+          <td>0,88</td>
+          <td>0,91</td>
+          <td>0,89</td>
+        </tr>
+        <tr>
+          <td>O</td>
+          <td>0,95</td>
+          <td>0,95</td>
+          <td>0,95</td>
+        </tr>
+        <tr>
+          <td>macro avg</td>
+          <td>0,79</td>
+          <td>0,87</td>
+          <td>0,83</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+          </div>
+
+          <!-- Collaborate Section -->
+          <div id="collaborate" class="collaborate-section">
+            <h3>Collaborate Section</h3>
+  <table>
+      <thead>
+        <tr>
+          <th>Label</th>
+          <th>Precision</th>
+          <th>Recall</th>
+          <th>F1-score</th>
+          <th>Akurasi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>B – ECONOMIC</td>
+          <td>0,80</td>
+          <td>0,94</td>
+          <td>0,86</td>
+          <td rowspan="7" class="highlight">0,86</td>
+        </tr>
+        <tr>
+          <td>I – ECONOMIC</td>
+          <td>0,73</td>
+          <td>0,79</td>
+          <td>0,76</td>
+        </tr>
+        <tr>
+          <td>B – SOCIAL</td>
+          <td>0,71</td>
+          <td>0,80</td>
+          <td>0,75</td>
+        </tr>
+        <tr>
+          <td>I – SOCIAL</td>
+          <td>0,89</td>
+          <td>0,94</td>
+          <td>0,91</td>
+        </tr>
+        <tr>
+          <td>B – ENVIRONMENT</td>
+          <td>0,60</td>
+          <td>0,73</td>
+          <td>0,66</td>
+        </tr>
+        <tr>
+          <td>I – ENVIRONMENT</td>
+          <td>0,88</td>
+          <td>0,91</td>
+          <td>0,89</td>
+        </tr>
+        <tr>
+          <td>O</td>
+          <td>0,95</td>
+          <td>0,95</td>
+          <td>0,95</td>
+        </tr>
+        <tr>
+          <td>macro avg</td>
+          <td>0,79</td>
+          <td>0,87</td>
+          <td>0,83</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+          </div>
+
+          <!-- Automate Section -->
+          <div id="automate" class="automate-section">
+            <h3>Automate Section</h3>
+  <table>
+      <thead>
+        <tr>
+          <th>Label</th>
+          <th>Precision</th>
+          <th>Recall</th>
+          <th>F1-score</th>
+          <th>Akurasi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>B – ECONOMIC</td>
+          <td>0,80</td>
+          <td>0,94</td>
+          <td>0,86</td>
+          <td rowspan="7" class="highlight">0,86</td>
+        </tr>
+        <tr>
+          <td>I – ECONOMIC</td>
+          <td>0,73</td>
+          <td>0,79</td>
+          <td>0,76</td>
+        </tr>
+        <tr>
+          <td>B – SOCIAL</td>
+          <td>0,71</td>
+          <td>0,80</td>
+          <td>0,75</td>
+        </tr>
+        <tr>
+          <td>I – SOCIAL</td>
+          <td>0,89</td>
+          <td>0,94</td>
+          <td>0,91</td>
+        </tr>
+        <tr>
+          <td>B – ENVIRONMENT</td>
+          <td>0,60</td>
+          <td>0,73</td>
+          <td>0,66</td>
+        </tr>
+        <tr>
+          <td>I – ENVIRONMENT</td>
+          <td>0,88</td>
+          <td>0,91</td>
+          <td>0,89</td>
+        </tr>
+        <tr>
+          <td>O</td>
+          <td>0,95</td>
+          <td>0,95</td>
+          <td>0,95</td>
+        </tr>
+        <tr>
+          <td>macro avg</td>
+          <td>0,79</td>
+          <td>0,87</td>
+          <td>0,83</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+          </div>
+
+          <!-- Secure Section -->
+          <div id="secure" class="secure-section">
+            <h3>Secure Section</h3>
+  <table>
+      <thead>
+        <tr>
+          <th>Label</th>
+          <th>Precision</th>
+          <th>Recall</th>
+          <th>F1-score</th>
+          <th>Akurasi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>B – ECONOMIC</td>
+          <td>0,80</td>
+          <td>0,94</td>
+          <td>0,86</td>
+          <td rowspan="7" class="highlight">0,86</td>
+        </tr>
+        <tr>
+          <td>I – ECONOMIC</td>
+          <td>0,73</td>
+          <td>0,79</td>
+          <td>0,76</td>
+        </tr>
+        <tr>
+          <td>B – SOCIAL</td>
+          <td>0,71</td>
+          <td>0,80</td>
+          <td>0,75</td>
+        </tr>
+        <tr>
+          <td>I – SOCIAL</td>
+          <td>0,89</td>
+          <td>0,94</td>
+          <td>0,91</td>
+        </tr>
+        <tr>
+          <td>B – ENVIRONMENT</td>
+          <td>0,60</td>
+          <td>0,73</td>
+          <td>0,66</td>
+        </tr>
+        <tr>
+          <td>I – ENVIRONMENT</td>
+          <td>0,88</td>
+          <td>0,91</td>
+          <td>0,89</td>
+        </tr>
+        <tr>
+          <td>O</td>
+          <td>0,95</td>
+          <td>0,95</td>
+          <td>0,95</td>
+        </tr>
+        <tr>
+          <td>macro avg</td>
+          <td>0,79</td>
+          <td>0,87</td>
+          <td>0,83</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+          </div>
+          <div class="code-header">
+            <button class="btn" onclick="showSection('code')">Code</button>
+            <button class="btn" onclick="showSection('plan')">Plan</button>
+            <button class="btn" onclick="showSection('collaborate')">
+              Collaborate
+            </button>
+            <button class="btn" onclick="showSection('automate')">
+              Automate
+            </button>
+            <button class="btn" onclick="showSection('secure')">Secure</button>
+          </div>  
+        </div>
+          
+        </div>
+      </div>
+    </div>
+
+
+    <script>
+      // Function to show the corresponding section based on the button click
+      function showSection(section) {
+        // Hide all sections
+        document.querySelector(".code-body").style.display = "none";
+        document.querySelector(".plan-section").style.display = "none";
+        document.querySelector(".collaborate-section").style.display = "none";
+        document.querySelector(".automate-section").style.display = "none";
+        document.querySelector(".secure-section").style.display = "none";
+
+        // Show the clicked section
+        document.getElementById(section).style.display = "block";
+      }
+
+      // Initially show the code section
+      showSection("code");
+    </script>
+  </body>
+</html>

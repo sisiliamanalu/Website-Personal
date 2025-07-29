@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .container {
+        display: flex;
+        width: 100%;
+      }
+
+      .content {
+        flex-grow: 1;
+        background-color: #121212;
+        padding: 20px;
+      }
+
+      /* Styling navbar container */
+      .button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #ffffff;
+        border: 2px solid grey;
+        padding: 10px 20px;
+        max-width: 600px; /* Limit max width */
+        margin: 0 auto; /* Center navbar */
+        border-radius: 30px;
+      }
+
+      /* Styling individual nav buttons */
+      .btn {
+        background-color: transparent;
+        border: 2px solid transparent;
+        color: rgb(0, 0, 0);
+        padding: 12px 20px;
+        margin: 0 10px;
+        border-radius: 30px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+
+      /* Hover effect for buttons */
+      .btn:hover {
+        color: black;
+        border: 2px solid #007bff;
+        background-color: rgba(0, 123, 255, 0.1);
+      }
+
+      /* Active button style */
+      .btn.active {
+        background-color: #007bff;
+        color: white;
+        border: 2px solid #007bff;
+      }
+
+      .albert,
+      .bert,
+      .distilbert,
+      .distilbert,
+      .roberta {
+        display: none; /* Initially hide all sections */
+        background-color: #121212;
+        padding: 20px;
+        border-radius: 8px;
+        font-family: "Courier New", Courier, monospace;
+        font-size: 14px;
+        color: #dcdcdc;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- albert Section -->
+    <div id="albert" class="albert-section">
+      <h3>Plan Section</h3>
+      <p>
+        Here, you can plan the next steps for the project or work on scheduling.
+      </p>
+    </div>
+    <div id="bert" class="bert-section">
+      <h3>Collaborate Section</h3>
+      <p>Here, you can discuss with others or share your work.</p>
+    </div>
+    <div id="electra" class="electra-section">
+      <h3>Plan Section</h3>
+      <p>
+        Here, you can plan the next steps for the project or work on scheduling.
+      </p>
+    </div>
+    <div id="distilbert" class="distilbert">
+      <h3>Collaborate Section</h3>
+      <p>Here, you can discuss with others or share your work.</p>
+    </div>
+    <div id="roberta" class="roberta-section">
+      <h3>Plan Section</h3>
+      <p>
+        Here, you can plan the next steps for the project or work on scheduling.
+      </p>
+    </div>
+    <div class="button">
+      <button class="btn" onclick="showSection('albert', this)">AlBERT</button>
+      <button class="btn" onclick="showSection('bert', this)">BERT</button>
+      <button class="btn" onclick="showSection('distilbert', this)">
+        DistilBERT
+      </button>
+      <button class="btn" onclick="showSection('electra', this)">
+        Electra
+      </button>
+      <button class="btn" onclick="showSection('roberta', this)">
+        RoBERTa
+      </button>
+    </div>
+  </body>
+
+  <script>
+    // Function to show the corresponding section based on the button click
+    function showSection(section) {
+      // Hide all sections
+      document.querySelector(".albert").style.display = "none";
+      document.querySelector(".bert").style.display = "none";
+      document.querySelector(".distilbert").style.display = "none";
+      document.querySelector(".electra").style.display = "none";
+      document.querySelector(".roberta").style.display = "none";
+
+      // Show the clicked section
+      document.getElementById(section).style.display = "block";
+    }
+
+    // Initially show the code section
+    showSection("code");
+  </script>
+</html>
